@@ -48,8 +48,11 @@ function MenuSearchService($http) {
 function FoundItems(){
         var ddo = {
                 templateUrl: 'foundItems.html',
-                items: "=foundItems",
-                remove: "@onRemove"
+                scope: {
+                        foundItems: "<"
+                }
+
+
         }
         return ddo;
 }
