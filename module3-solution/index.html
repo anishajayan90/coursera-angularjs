@@ -17,7 +17,8 @@
     <div class="form-group narrow-button">
       <button class="btn btn-primary" ng-click = "ctrl.search(ctrl.searchTerm)">Narrow It Down For Me!</button>
     </div>
-
+    
+{{ctrl.found}}
     <!-- found-items should be implemented as a component -->
     <found-items items="ctrl.found" on-remove="ctrl.remove()"></found-items>
   </div>
