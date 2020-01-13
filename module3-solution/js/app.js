@@ -12,7 +12,24 @@ function NarrowItDownController(MenuSearchService) {
         var narrowItDownCtrl = this;
         narrowItDownCtrl.searchTerm = ""
         narrowItDownCtrl.search = function(searchTerm){
-                narrowItDownCtrl.found = MenuSearchService.getMatchedMenuItems(searchTerm);
+                var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
+                promise.then(function (result) {
+
+                        var menu_items = result.data.menu_items;
+                        console.log(menu_items);
+                    // process result and only keep items that match
+                    var foundItems = []
+                    for (var i = 0; i < menu_items.length; i++) {
+                            if (menu_items[i].description.includes(searchTerm)) {
+                                    foundItems.push(menu_items[i])
+                            }
+                    }
+                    console.log(foundItems);
+                    // return processed items
+                    narrowItDownCtrl.found = foundItems;
+                });
+                console.log("found=");
+                console.log(narrowItDownCtrl.found);
         }
         narrowItDownCtrl.remove = function(index){
                 narrowItDownCtrl.found.splice(index, 1)
@@ -27,19 +44,6 @@ function MenuSearchService($http) {
         return $http({
                 method: "GET",
                 url: "https://davids-restaurant.herokuapp.com/menu_items.json"
-        }).then(function (result) {
-                var menu_items = result.data.menu_items;
-                console.log(menu_items);
-            // process result and only keep items that match
-            var foundItems = []
-            for (var i = 0; i < menu_items.length; i++) {
-                    if (menu_items[i].description.includes(searchTerm)) {
-                            foundItems.push(menu_items[i])
-                    }
-            }
-            console.log(foundItems);
-            // return processed items
-            return foundItems;
         });
   }
 
