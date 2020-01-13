@@ -10,7 +10,7 @@ angular.module('NarrowItDownApp', [])
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
         var narrowItDownCtrl = this;
-        narrowItDownCtrl.found = [{name: "abc", short_name: "a", description: "desc"}]
+        narrowItDownCtrl.found = []
         narrowItDownCtrl.searchTerm = ""
         narrowItDownCtrl.search = function(searchTerm){
                 var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
