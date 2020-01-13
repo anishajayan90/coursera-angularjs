@@ -52,7 +52,7 @@ function FoundItems(){
                         items: "<"
                 },
                 controller: NarrowItDownController,
-                controllerAs: ctrl
+                controllerAs: 'ctrl'
 
 
         }
