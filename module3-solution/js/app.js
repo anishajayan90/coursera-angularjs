@@ -28,9 +28,10 @@ function NarrowItDownController(MenuSearchService) {
                                     }
                             }
                             console.log("foundItems: "+foundItems);
-                            console.log("narrowItDownCtrl.found: "+narrowItDownCtrl.found);
+
                             // return processed items
                             narrowItDownCtrl.found = foundItems;
+                            console.log("narrowItDownCtrl.found: "+narrowItDownCtrl.found);
                         });
                 }else {
                         narrowItDownCtrl.found = []
