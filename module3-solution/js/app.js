@@ -17,7 +17,7 @@ function NarrowItDownController(MenuSearchService) {
                 promise.then(function (result) {
 
                         var menu_items = result.data.menu_items;
-                        console.log(menu_items);
+                        console.log("total: "+menu_items);
                     // process result and only keep items that match
                     var foundItems = []
                     for (var i = 0; i < menu_items.length; i++) {
@@ -25,7 +25,7 @@ function NarrowItDownController(MenuSearchService) {
                                     foundItems.push(menu_items[i])
                             }
                     }
-                    console.log(foundItems);
+                    console.log("foundItems: "+foundItems);
                     // return processed items
                     narrowItDownCtrl.found = foundItems;
                 });
@@ -33,7 +33,7 @@ function NarrowItDownController(MenuSearchService) {
                 console.log(narrowItDownCtrl.found);
         }
         narrowItDownCtrl.remove = function(index){
-                console.log("index: "+index);
+                console.log("remove index: "+index);
                 narrowItDownCtrl.found.splice(index, 1)
         }
 }
