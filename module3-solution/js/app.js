@@ -33,6 +33,7 @@ function NarrowItDownController(MenuSearchService) {
                 console.log(narrowItDownCtrl.found);
         }
         narrowItDownCtrl.remove = function(index){
+                console.log("index: "+index);
                 narrowItDownCtrl.found.splice(index, 1)
         }
 }
