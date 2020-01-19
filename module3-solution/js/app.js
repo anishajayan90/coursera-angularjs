@@ -13,7 +13,7 @@ function NarrowItDownController(MenuSearchService) {
 
         narrowItDownCtrl.searchTerm = ""
         narrowItDownCtrl.search = function(searchTerm){
-                if (true) {
+                if (searchTerm) {
                         var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
                         promise.then(function (result) {
 
