@@ -12,6 +12,7 @@ function NarrowItDownController(MenuSearchService) {
         var narrowItDownCtrl = this;
 
         narrowItDownCtrl.searchTerm = ""
+        narrowItDownCtrl.found = []
         narrowItDownCtrl.search = function(searchTerm){
                 if (searchTerm) {
                         var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
@@ -27,6 +28,7 @@ function NarrowItDownController(MenuSearchService) {
                                     }
                             }
                             console.log("foundItems: "+foundItems);
+                            console.log("narrowItDownCtrl.found: "+narrowItDownCtrl.found);
                             // return processed items
                             narrowItDownCtrl.found = foundItems;
                         });
