@@ -10,25 +10,30 @@ angular.module('NarrowItDownApp', [])
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
         var narrowItDownCtrl = this;
-        narrowItDownCtrl.found = []
+
         narrowItDownCtrl.searchTerm = ""
         narrowItDownCtrl.search = function(searchTerm){
-                var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
-                promise.then(function (result) {
+                if (true) {
+                        var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
+                        promise.then(function (result) {
 
-                        var menu_items = result.data.menu_items;
-                        console.log("total: "+menu_items);
-                    // process result and only keep items that match
-                    var foundItems = []
-                    for (var i = 0; i < menu_items.length; i++) {
-                            if (menu_items[i].description.includes(searchTerm)) {
-                                    foundItems.push(menu_items[i])
+                                var menu_items = result.data.menu_items;
+                                console.log("total: "+menu_items);
+                            // process result and only keep items that match
+                            var foundItems = []
+                            for (var i = 0; i < menu_items.length; i++) {
+                                    if (menu_items[i].description.includes(searchTerm)) {
+                                            foundItems.push(menu_items[i])
+                                    }
                             }
-                    }
-                    console.log("foundItems: "+foundItems);
-                    // return processed items
-                    narrowItDownCtrl.found = foundItems;
-                });
+                            console.log("foundItems: "+foundItems);
+                            // return processed items
+                            narrowItDownCtrl.found = foundItems;
+                        });
+                }else {
+                        narrowItDownCtrl.found = []
+                }
+
                 console.log("found=");
                 console.log(narrowItDownCtrl.found);
         }
