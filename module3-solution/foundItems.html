@@ -1,7 +1,7 @@
 <br>
 <hr>
 <div>
-        <div class="row" ng-repeat="item in items track by $index">
+        <div class="row" ng-repeat="item in items">
                 <div class="col-md-3" >
                         Name: {{item.name}}
                 </div>
@@ -13,7 +13,7 @@
 
                 </div>
                 <div class="col-md-3" >
-                        <button ng-click="ctrl.remove($index)">Remove</button>
+                        <button ng-click="ctrl.remove({index: $index})">Remove</button>
                 </div>
                 <hr>
                 <br>
