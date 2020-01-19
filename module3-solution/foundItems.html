@@ -1,22 +1,7 @@
-<br>
-<hr>
-<div>
-        <div class="row" ng-repeat="item in items">
-                <div class="col-md-3" >
-                        Name: {{item.name}}
-                </div>
-                <div class="col-md-3" >
-                        Short Name: {{item.short_name}}
-                </div>
-                <div class="col-md-3" >
-                        Desc: {{item.description}}
-
-                </div>
-                <div class="col-md-3" >
-                        <button ng-click="ctrl.onRemove({index: $index})">Remove</button>
-                </div>
-                <hr>
-                <br>
-
-        </div>
-</div>
+<ul>
+	<li ng-repeat="item in list.items">
+		{{item.name}} , {{item.short_name}} , {{item.description}}
+		<button class="btn btn-warning" ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+	</li>
+	<div class="alert alert-info" ng-if="list.checkFoundList()">Nothing found</div>
+<ul>
