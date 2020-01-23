@@ -1,5 +1,5 @@
 angular.module('MenuApp')
-.component('item', {
+.component('items', {
   templateUrl: 'src/menuapp/templates/item.template.html',
   bindings: {
     items: '<'
