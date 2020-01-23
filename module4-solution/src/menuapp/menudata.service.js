@@ -23,5 +23,6 @@ function MenuDataService($http) {
                 url: (ApiBasePath + "/menu_items.json?category="+categoryShortName)
         })
 }
+}
 
 })();
