@@ -1,6 +1,6 @@
 angular.module('MenuApp')
 .component('item', {
-  templateUrl: 'item.html',
+  templateUrl: 'src/menuapp/templates/items.template.html',
   bindings: {
     items: '<'
   }
