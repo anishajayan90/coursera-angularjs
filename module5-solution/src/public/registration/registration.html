@@ -52,9 +52,9 @@
           <br>
 
           <input type="text" name="favorite" placeholder="Favorite dish"
-            ng-model="signUpCtrl.info.favorite"
-            ng-blur="signUpCtrl.validateFavorite()">
-            <span ng-if="signUpCtrl.invalidFavorite">
+            ng-model="regCtrl.info.favorite"
+            ng-blur="regCtrl.validateFavorite()">
+            <span ng-if="regCtrl.invalidFavorite">
               No such menu number exists
             </span>
             <br>
