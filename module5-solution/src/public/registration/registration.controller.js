@@ -34,7 +34,7 @@ function RegistrationController(MenuService, MyInfoService) {
     }
 
   };
-}
+
 
 
 })();
