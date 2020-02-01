@@ -194,8 +194,10 @@ button {
 
 .ng-touched.ng-valid {
   border: 2px green solid;
+  color: black;
 }
 
 .ng-touched.ng-invalid {
   border: 2px red solid;
+  color: black;
 }
