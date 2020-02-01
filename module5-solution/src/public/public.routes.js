@@ -21,7 +21,14 @@ function routeConfig ($stateProvider) {
     })
     .state('public.myinfo', {
       url: '/myinfo',
-      templateUrl: 'src/public/home/myinfo.html'
+      templateUrl: 'src/public/myinfo/myinfo.html',
+      controller: 'MyInfoController',
+      controllerAs: 'myInfoCtrl',
+      resolve: {
+        info: ['MyInfoService', function(MyInfoService) {
+          return MyInfoService.getInfo();
+        }]
+      }
     })
     .state('public.signup', {
       url: '/signup',

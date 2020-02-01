@@ -4,20 +4,34 @@
       <legend>regCtrlistration</legend>
       <form name='regCtrlForm' novalidate>
 
-        <input type="text" name="username" placeholder="Pick a username"
-          ng-model="regCtrl.user.username"
+        <input type="text" name="firstName" placeholder="First name"
+          ng-model="regCtrl.user.firstName"
           required
           minlength="4"
           ng-maxlength="10">
-          {{ regCtrl.user.username }}
+          {{ regCtrl.user.firstName }}
           <span
-            ng-if="(regCtrlForm.username.$error.minlength || regCtrlForm.username.$error.required) && regCtrlForm.username.$touched">
-            Username must be at least 4 characters long
+            ng-if="(regCtrlForm.firstName.$error.minlength || regCtrlForm.firstName.$error.required) && regCtrlForm.firstName.$touched">
+            First Name must be at least 4 characters long
           </span>
-          <span ng-if="regCtrlForm.username.$error.maxlength && regCtrlForm.username.$touched">
-            Username must not be longer than 10 characters
+          <span ng-if="regCtrlForm.firstName.$error.maxlength && regCtrlForm.firstName.$touched">
+            First Name must not be longer than 10 characters
           </span>
           <br>
+        <input type="text" name="lastName" placeholder="Last name"
+        ng-model="regCtrl.user.lastName"
+        required
+        minlength="4"
+        ng-maxlength="10">
+        {{ regCtrl.user.lastName }}
+        <span
+        ng-if="(regCtrlForm.lastName.$error.minlength || regCtrlForm.lastName.$error.required) && regCtrlForm.lastName.$touched">
+        Last Name must be at least 4 characters long
+        </span>
+        <span ng-if="regCtrlForm.lastName.$error.maxlength && regCtrlForm.lastName.$touched">
+        Last Name must not be longer than 10 characters
+        </span>
+        <br>
 
         <input type="email" name="email" placeholder="Email"
           ng-model="regCtrl.user.email"
@@ -34,6 +48,11 @@
             Phone must be in the format ###-###-####.
           </span>
           <br>
+
+          <input type="text" name="menu_number" placeholder="Menu Number"
+            ng-model="regCtrl.user.menu_number"
+            required>
+            <br>
 
         <button
           ng-disabled="regCtrlForm.$invalid"
