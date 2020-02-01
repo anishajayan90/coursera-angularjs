@@ -1,0 +1,50 @@
+<div class="container">
+  <h2 id="menu-categories-title" class="text-center">regCtrlistration</h2>
+  <fieldset>
+      <legend>regCtrlistration</legend>
+      <form name='regCtrlForm' novalidate>
+
+        <input type="text" name="username" placeholder="Pick a username"
+          ng-model="regCtrl.user.username"
+          required
+          minlength="4"
+          ng-maxlength="10">
+          {{ regCtrl.user.username }}
+          <span
+            ng-if="(regCtrlForm.username.$error.minlength || regCtrlForm.username.$error.required) && regCtrlForm.username.$touched">
+            Username must be at least 4 characters long
+          </span>
+          <span ng-if="regCtrlForm.username.$error.maxlength && regCtrlForm.username.$touched">
+            Username must not be longer than 10 characters
+          </span>
+          <br>
+
+        <input type="email" name="email" placeholder="Email"
+          ng-model="regCtrl.user.email"
+          required>
+          <span ng-if="regCtrlForm.email.$invalid && regCtrlForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+          <br>
+
+        <input type="text" name="phone" placeholder="Phone ###-###-####"
+          ng-model="regCtrl.user.phone"
+          pattern="(\d{3})-(\d{3})-(\d{4})">
+          <span ng-if="regCtrlForm.phone.$invalid && regCtrlForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+          <br>
+
+        <button
+          ng-disabled="regCtrlForm.$invalid"
+          ng-click="regCtrl.submit()">Submit</button>
+
+          <div style="margin-top: 10px;">
+            Form valid? {{ regCtrlForm.$valid }}
+          </div>
+      </form>
+    </fieldset>
+
+
+
+</div>
