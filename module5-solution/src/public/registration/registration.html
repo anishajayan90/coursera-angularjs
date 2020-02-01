@@ -11,7 +11,7 @@
           required
           minlength="4"
           ng-maxlength="10">
-          {{ regCtrl.info.firstName }}
+          
           <span
             ng-if="(regCtrlForm.firstName.$error.minlength || regCtrlForm.firstName.$error.required) && regCtrlForm.firstName.$touched">
             First Name must be at least 4 characters long
@@ -25,7 +25,7 @@
         required
         minlength="4"
         ng-maxlength="10">
-        {{ regCtrl.info.lastName }}
+
         <span
         ng-if="(regCtrlForm.lastName.$error.minlength || regCtrlForm.lastName.$error.required) && regCtrlForm.lastName.$touched">
         Last Name must be at least 4 characters long
